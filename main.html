@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+input[type=text], input[type=date],input[type=number],input[type=range] ,select {
+	width: 50%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 2px solid #ccc
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	width: 50%;
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+div, h1{
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+	text-align: center;
+}
+</style>
+<title>Dotazník o spokojenosti ve městě</title>
+</head>
+<body>
+<center>
+<h1>Počet obyvatel - Morava<br>
+* jsou povinné údaje</h1>
+</center>
+<div>
+	<form action="/action_page.php">
+	
+		<label for="jmeno" align="top">Jméno</label><br>
+		<input type="text" id="jmeno" name="jmeno" placeholder="Jméno"><br>
+
+		<label for="prijmeni">Příjmení</label><br>
+		<input type="text" id="prijmeni" name="prijmeni" placeholder="Příjmení"><br>
+		
+		<label for="narozeni">Datum narození*</label><br>
+		<input type="date" id="narozeni" name="narozeni" required><br>
+		
+		<label for="kraj">Kraj *</label><br>
+		<select id="kraj" name="kraj" required>
+			<option value="zlinsky">Zlínský</option>
+			<option value="jihomoravksy">Jihomoravský</option>
+			<option value="olomoucky">Olomoucký</option>
+			<option value="moravskoslezsky">Moravskoslezský</option>
+		</select><br>
+		
+		<label for="mesto">Město *</label><br>
+		<input type="text" id="mesto" name="mesto" placeholder="Město" required><br>
+		
+		<label for="psc">PSČ *</label><br>
+		<input type="text" placeholder="000 00" id="psc" name="psc" maxlength="6" pattern="[0-9]{3}&#32;[0-9]{2}" required><br>
+		
+		<label for="vzdelani">Vzdělání*</label><br>
+		<select id="vzdelani" name="vzdelani" required>
+			<option value="zadne">Žádné</option>
+			<option value="zakladni">Základní vzdělání</option>
+			<option value="stredni">Střední vzdělání</option>
+			<option value="vyssi_odborne">Vyšší odborné vzdělání</option>
+			<option value="vysokoskolske">Vysokoškolské vzdělání</option>
+		</select><br><br>
+			
+		<label for="info">Chcete obdržet výsledky?</label><br>
+		<input type="radio" name="ano/ne" value="Y" required>
+			<label for="ano">Ano</label>
+		<input type="radio" name="ano/ne" value="N" required>
+			<label for="ne">Ne</label><br><br>
+			
+		<label for ="e-mail"> E-mail:</label><br>
+		<input type="text" placeholder="E-Mail" id="e-mail" name="e-mail"><br>
+		
+		<label for="radost"> Jak moc jste spokojení s vašim městem? (0-10)</label><br>
+		<input type="number" name="radost" min="0" max="10">
+		
+		<input type="submit" value="Odeslat">
+	</form>
+</div>
+
+</body>
+</html>
+		
